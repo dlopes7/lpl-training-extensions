@@ -1,19 +1,31 @@
 {
-  "name": "custom.remote.python.custom",
-  "version": "1.001",
-  "metricGroup": "tech.Custom",
+  "name": "custom.remote.python.spacex_davidlopes",
+  "version": "1.002",
+  "metricGroup": "tech.SpaceX.DavidLopes",
   "technologies": [
-    "Custom"
+    "SpaceX David Lopes"
   ],
   "type": "python",
   "entity": "CUSTOM_DEVICE",
   "source": {
-    "package": "basic_plugin",
-    "className": "BasicPlugin",
-    "install_requires": []
+    "package": "spacex_extension_davidlopes",
+    "className": "SpaceXExtension",
+    "install_requires": ["requests"]
   },
   "properties": [],
-  "configUI": {},
-  "metrics": [],
+  "configUI": {
+    "displayName": "SpaceX David Lopes"
+  },
+  "metrics": [
+
+    {
+      "timeseries":
+      {
+        "key": "fuel",
+        "unit": "Count",
+        "displayname": "Fuel"
+      }
+    }
+  ],
   "ui": {}
 }
