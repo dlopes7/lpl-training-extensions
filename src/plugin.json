@@ -1,6 +1,6 @@
 {
   "name": "custom.remote.python.spacex_davidlopes",
-  "version": "1.005",
+  "version": "1.006",
   "metricGroup": "tech.SpaceX.DavidLopes",
   "technologies": [
     "SpaceX David Lopes"
@@ -26,5 +26,26 @@
     {"timeseries": {"key": "thrust", "unit": "Percent","displayname": "Thrust", "dimensions": ["Engine"]}
     }
   ],
-  "ui": {}
+  "ui": {
+    "keymetrics": [
+      {"key":  "fuel", "displayName": "Fuel"},
+      {"key":  "thrust", "displayName": "Thrust", "mergeaggregation": "AVG"}
+    ],
+    "keycharts": [
+      {"group": "Ship performance", "title":  "Fuel", "series":  [
+        {"key":  "fuel", "displayName": "Fuel", "color": "#9cd575", "seriestype":  "bar"}
+      ]},
+      {"group": "Ship performance", "title":  "Thrust", "series":  [
+        {"key":  "thrust", "displayName": "Thrust", "mergeaggregation": "AVG"}
+      ]}
+    ],
+    "charts": [
+      {"group": "Ship performance", "title":  "Fuel", "series":  [
+        {"key":  "fuel", "displayName": "Fuel", "color": "#9cd575", "seriestype":  "bar"}
+      ]},
+      {"group": "Ship performance", "title":  "Thrust", "series":  [
+        {"key":  "thrust", "displayName": "Thrust"}
+      ]}
+    ]
+  }
 }
