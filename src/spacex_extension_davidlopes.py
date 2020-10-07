@@ -33,7 +33,7 @@ class SpaceXExtension(RemoteBasePlugin):
 
 
     def get_ships(self):
-        url = "http://ec2-3-235-75-78.compute-1.amazonaws.com/v3/ships"
+        url = self.config.get("url")
         self.logger.info(f"Calling {url}...")
         return requests.get(url).json()
 
