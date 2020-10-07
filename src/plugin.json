@@ -1,6 +1,6 @@
 {
   "name": "custom.remote.python.spacex_davidlopes",
-  "version": "1.007",
+  "version": "1.008",
   "metricGroup": "tech.SpaceX.DavidLopes",
   "technologies": [
     "SpaceX David Lopes"
@@ -23,8 +23,8 @@
   },
   "metrics": [
     {"timeseries": {"key": "fuel", "unit": "Count", "displayname": "Fuel" }},
-    {"timeseries": {"key": "thrust", "unit": "Percent","displayname": "Thrust", "dimensions": ["Engine"]}
-    }
+    {"timeseries": {"key": "thrust", "unit": "Percent","displayname": "Thrust", "dimensions": ["Engine"]}},
+    {"statetimeseries": {"key": "weather", "displayname": "Weather", "states": ["Fair", "Cloudy", "Sunny", "Rainy", "Stormy", "Snowy", "Windy", "Hail"] }}
   ],
   "ui": {
     "keymetrics": [
@@ -37,6 +37,10 @@
       ]},
       {"group": "Ship performance", "title":  "Thrust", "series":  [
         {"key":  "thrust", "displayName": "Thrust", "mergeaggregation": "AVG"}
+      ]},
+      {"group": "Ship report", "title":  "Weather", "series":  [
+        {"key":  "weather", "displayName": "Weather", "statechart": true,
+          "statecolors": ["#ef651f", "#f5d30f", "#4fd5e0", "#4556d7", "#ffa86c", "#4556d7", "#ffa86c", "#4fd5e0"]}
       ]}
     ],
     "charts": [
@@ -45,6 +49,10 @@
       ]},
       {"group": "Ship performance", "title":  "Thrust", "series":  [
         {"key":  "thrust", "displayName": "Thrust"}
+      ]},
+      {"group": "Ship report", "title":  "Weather", "series":  [
+        {"key":  "weather", "displayName": "Weather", "statechart": true,
+          "statecolors": ["#ef651f", "#f5d30f", "#4fd5e0", "#4556d7", "#ffa86c", "#4556d7", "#ffa86c", "#4fd5e0"]}
       ]}
     ]
   }

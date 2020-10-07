@@ -39,6 +39,9 @@ class SpaceXExtension(RemoteBasePlugin):
             # Add the IP address
             custom_device.add_endpoint(ship["ship_ip"])
 
+            # Report a state (string) metric
+            custom_device.state_metric("weather", ship["weather"])
+
     def get_ships(self):
         url = self.config.get("url")
         self.logger.info(f"Calling {url}...")
