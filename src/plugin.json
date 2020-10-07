@@ -1,6 +1,6 @@
 {
   "name": "custom.remote.python.spacex_davidlopes",
-  "version": "1.006",
+  "version": "1.007",
   "metricGroup": "tech.SpaceX.DavidLopes",
   "technologies": [
     "SpaceX David Lopes"

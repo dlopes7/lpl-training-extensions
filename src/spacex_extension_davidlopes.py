@@ -31,6 +31,13 @@ class SpaceXExtension(RemoteBasePlugin):
             for engine in ship["thrust"]:
                 custom_device.absolute("thrust", engine["power"], dimensions={"Engine": engine["engine"]})
 
+            # Add properties to the device
+            custom_device.report_property("Roles", ",".join(ship.get("roles", [])))
+            custom_device.report_property("Home port", ship.get("home_port", ""))
+            custom_device.report_property("Active", f"{ship.get('active', False)}")
+
+            # Add the IP address
+            custom_device.add_endpoint(ship["ship_ip"])
 
     def get_ships(self):
         url = self.config.get("url")
