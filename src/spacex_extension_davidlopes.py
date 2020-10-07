@@ -27,6 +27,10 @@ class SpaceXExtension(RemoteBasePlugin):
             # Send a simple metric
             custom_device.absolute("fuel", ship["fuel"])
 
+            # Send a metric with dimensions
+            for engine in ship["thrust"]:
+                custom_device.absolute("thrust", engine["power"], dimensions={"Engine": engine["engine"]})
+
 
     def get_ships(self):
         url = "http://ec2-3-235-75-78.compute-1.amazonaws.com/v3/ships"
